@@ -32,12 +32,12 @@ public class PessoaController {
    
     @GetMapping()
     public ResponseEntity<List<Pessoa>> getPessoas(){
-        return ResponseEntity.ok().body(this.service.getPessoas());
+        return ResponseEntity.ok(service.getPessoas());
     }
 
     @GetMapping("{id}")
     public ResponseEntity<Pessoa> getPessoaById(@PathVariable int id){
-        return ResponseEntity.ok().body(service.getPessoaById(id));
+        return ResponseEntity.ok(service.getPessoaById(id));
     }
 
     @DeleteMapping("{id}")
@@ -59,5 +59,7 @@ public class PessoaController {
         
         return ResponseEntity.created(location).body(newPessoa);
     }
+
+    
 
 }

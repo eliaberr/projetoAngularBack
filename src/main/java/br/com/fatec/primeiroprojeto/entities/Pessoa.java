@@ -18,6 +18,7 @@ public class Pessoa {
 
     @Column(nullable = false)
     private String nome;
+    
     private String email;
     private String telefone;
     private String endereco;
