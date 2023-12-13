@@ -16,13 +16,7 @@ public class PessoaService {
 
    
     public List<Pessoa> getPessoas(){
-        List<Pessoa> pessoas = this.repository.findAll();
-
-        if(pessoas == null){
-            throw new EntityNotFoundException("Não há pessoas cadastradas!");
-        }
-
-        return pessoas;
+        return repository.findAll();
     }
 
     
@@ -45,6 +39,10 @@ public class PessoaService {
 
     public Pessoa save(Pessoa pessoa){
         return this.repository.save(pessoa);
+    }
+
+
+    public void update(int id, Pessoa pessoa) {
     }
 
 }
